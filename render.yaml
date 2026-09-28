@@ -1,0 +1,10 @@
+
+services:
+  - type: web
+    name: enis-v4-bridge
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ENIS_V4_ADMIN_TOKEN
+        generateValue: true
