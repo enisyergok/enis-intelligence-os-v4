@@ -1,10 +1,21 @@
-
 services:
   - type: web
-    name: enis-v4-bridge
-    runtime: docker
-    plan: free
+    name: enis-v4-mcp-read
+    runtime: node
+    rootDir: mcp-gateway
+    buildCommand: npm ci
+    startCommand: npm run start:http
     healthCheckPath: /health
     envVars:
+      - key: ENIS_V4_MCP_HTTP
+        value: "1"
+      - key: ENIS_V4_MCP_READ_ONLY
+        value: "1"
+      - key: ENIS_V4_BRIDGE_URL
+        value: https://enis-intelligence-os-v4.onrender.com
+      - key: ENIS_V4_DEVICE_ID
+        sync: false
       - key: ENIS_V4_ADMIN_TOKEN
-        generateValue: true
+        sync: false
+      - key: ENIS_V4_MCP_TOKEN
+        sync: false
