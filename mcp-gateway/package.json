@@ -1,0 +1,16 @@
+{
+  "name": "enis-v4-mcp-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local MCP gateway for the Enis V4 Bridge with explicit approval for write actions.",
+  "scripts": {
+    "start": "node server.mjs",
+    "start:http": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.2",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  }
+}
